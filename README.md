@@ -60,6 +60,17 @@ Ensure you have an emulator running or a physical device connected, then run:
 4. Wait for the AI to generate an image based on your prompt.
 5. View and save the generated image.
 
+## Screenshots
+
+Here are some screenshots of the application:
+
+<p align="center">
+  <img src="assets/screenshots/screenshot2.png" alt="Screenshot 1" width="200" style="margin-right: 20px;">
+  <img src="assets/screenshots/screenshot1.png" alt="Screenshot 2" width="200" style="margin-left: 20px;">
+</p>
+
+
+
 ## Contributing
 
 Contributions are welcome! Follow these steps to contribute:
