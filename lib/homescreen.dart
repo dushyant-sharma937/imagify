@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:imagify/bloc/image_prompt_bloc.dart';
+import 'package:Imagify/bloc/image_prompt_bloc.dart';
+import 'package:loading_indicator/loading_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -41,12 +42,33 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (context, state) {
           switch (state.runtimeType) {
             case PromptImageLoadState:
-              return const Center(
-                child: CircularProgressIndicator(),
+              return Center(
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: LoadingIndicator(
+                    indicatorType: Indicator.ballScaleMultiple,
+                    colors: [Theme.of(context).colorScheme.secondary],
+                  ),
+                ),
               );
             case PromptImageErrorState:
-              return const Center(
-                child: Text("Error loading image"),
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Error loading image"),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    IconButton(
+                      onPressed: () {
+                        imagePromptBloc.add(
+                          ImagePromptInitialEvent(),
+                        );
+                      },
+                      icon: Icon(Icons.refresh),
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                  ],
+                ),
               );
             case PromptImageSuccessState:
               final successState = state as PromptImageSuccessState;

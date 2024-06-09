@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:imagify/repos/prompt_repo.dart';
+import 'package:Imagify/repos/prompt_repo.dart';
 
 part 'image_prompt_event.dart';
 part 'image_prompt_state.dart';
