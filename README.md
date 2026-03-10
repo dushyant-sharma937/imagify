@@ -45,6 +45,11 @@ Before you begin, ensure you have met the following requirements:
   ```bash
   IMAGINE_API_KEY=your_api_key_here
   ```
+   You might find your api key in this format:
+   ```bash
+   IMAGINE_TOKEN = "Bearer your_api_key_here"
+   ```
+   
 4. **Run the application:**
 Ensure you have an emulator running or a physical device connected, then run:
 
